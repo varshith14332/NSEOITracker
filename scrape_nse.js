@@ -27,7 +27,7 @@ async function scrapeAndSend() {
 
     // Scrape data
     const trendlyneData = await page.evaluate(() => {
-      const rows = Array.from(document.querySelectorAll("table tbody tr")).slice(0, 20);
+      const rows = Array.from(document.querySelectorAll("table tbody tr")).slice(0, 25);
 
       return rows.map((row) => {
         const cells = row.querySelectorAll("td");
