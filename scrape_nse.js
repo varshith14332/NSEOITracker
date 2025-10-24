@@ -27,7 +27,7 @@ async function scrapeAndSend() {
 
     // Scrape data
     const nseData = await page.evaluate(() => {
-      const rows = Array.from(document.querySelectorAll("table tbody tr")).slice(0, 20);
+      const rows = Array.from(document.querySelectorAll("table tbody tr")).slice(0, 25);
 
       return rows.map((row) => {
         const cells = row.querySelectorAll("td");
@@ -46,7 +46,7 @@ async function scrapeAndSend() {
     console.table(nseData);
 
     // Your n8n webhook URL
-    const webhookUrl = "https://kai14332.app.n8n.cloud/webhook/d8ea0ee1-a6dd-4cd3-a98b-0593638f9f75";
+    const webhookUrl = "https://kai14332.app.n8n.cloud/webhook/8db47b68-df6e-4cdf-a753-52e78df976fe";
 
     // Send to n8n
     await axios.post(webhookUrl, nseData, {
